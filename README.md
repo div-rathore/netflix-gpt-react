@@ -4,7 +4,9 @@
 - Build Login form
 - Build Sign up form (Focus on code reusability)
 - Form Validations
-- 
+- Firebase setup
+- Deploying web app to production using firebase
+- Creating Signup new user functionality using firebase
 
 # Features
 - Login/sign up

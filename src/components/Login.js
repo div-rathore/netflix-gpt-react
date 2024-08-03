@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
+import { createUserWithEmailAndPassword , signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -18,6 +20,48 @@ const Login = () => {
     );
     // console.log(errMessage);
     setValidationError(errMessage);
+    //if the email or pwd is not valid then dont execute this function further
+    if (errMessage) return;
+
+    //Allow sign in or sign up
+    if (!isSignInForm) {
+      //sign up code
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setValidationError(errorMessage);
+          console.log(errorCode + " - " + errorMessage);
+        });
+    } else {
+      //sign in code
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setValidationError(errorMessage)
+        });
+    }
   };
   return (
     <div>
@@ -50,12 +94,14 @@ const Login = () => {
           ref={email}
         />
         <input
-          type="text"
+          type="password"
           placeholder="Password"
           className="p-4 my-4 w-full bg-gray-700 rounded-lg"
           ref={password}
         />
-        <p className="text-red-500 my-2 font-bold text-lg p-2">{validationError}</p>
+        <p className="text-red-500 my-2 font-bold text-lg p-2">
+          {validationError}
+        </p>
 
         <button
           className="p-4 my-4 bg-red-700 rounded-lg  w-full"
