@@ -1,7 +1,10 @@
 - Configured Tailwind css in our app
 - Build Header
+- Routing
 - Build Login form
 - Build Sign up form (Focus on code reusability)
+- Form Validations
+- 
 
 # Features
 - Login/sign up
