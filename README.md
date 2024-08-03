@@ -7,6 +7,8 @@
 - Firebase setup
 - Deploying web app to production using firebase
 - Creating Signup new user functionality using firebase
+- Create a Redux Store with user slice
+- used onAuthStateChanged API from firebase
 
 # Features
 - Login/sign up
