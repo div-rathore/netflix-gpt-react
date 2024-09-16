@@ -9,6 +9,21 @@
 - Creating Signup new user functionality using firebase
 - Create a Redux Store with user slice
 - used onAuthStateChanged API from firebase
+- Fetch Movies from TMDB Movies APIs
+- Route graurds(sign in and sign up)
+- unsubscribed to the onAuthStateChanged callback
+- Add hardcoded values to the constants file.
+- Register for TMDB API and create an app & get the access token
+- Get data from TMDB Now playing moviews list API
+- Created custom hook for nowPlaying movies
+- Create a movie slice
+- Update store with movies data
+- planning for main container and secondary ontainer
+- fetch data fro trailer video
+- update the store with trailer video data
+- embedded the ytvideo and made it autoplay and mute
+- Added tailwind classes to the main container
+
 
 # Features
 - Login/sign up
