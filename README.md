@@ -29,6 +29,10 @@
 - TMDB Image CDN url
 - Browse Page UI upgradation using tailwind css
 - Custom hooks for different movies sections like popular movies, upcoming movies , etc
+- GPT search feature
+- GPT Search bar
+- Multilingual feature
+- Integrate GPT API
 
 # Features
 - Login/sign up
