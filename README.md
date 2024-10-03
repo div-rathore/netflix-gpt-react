@@ -33,6 +33,15 @@
 - GPT Search bar
 - Multilingual feature
 - Integrate GPT API
+- GPT Search api call using gemini
+- Fetched gpt movie suggestions from TMDB
+- Created GPT slice
+- Reused movie list component for movie recommendation container
+- Added .env 
+- Memoization
+- Responsiveness
+
+
 
 # Features
 - Login/sign up
